@@ -22,7 +22,6 @@ def main(args):
     search.clear()
     search.send_keys(args.keywords, Keys.ENTER)
     elem1 = browser.find_element_by_id('islrg')
-    #sub = elem1.find_elements_by_tag_name('img')
     click = elem1.find_elements_by_tag_name("a")
     click[0].click()
     url_pattern = r"imgurl=\S*&amp;imgrefurl"
@@ -32,24 +31,11 @@ def main(args):
     while re_group is None:
         re_group = re.search(url_pattern, outer_html)
     image_url = unquote(re_group.group()[7:-14])
-    #elem2 = browser.find_element_by_id('Sva75c')
-    #soup = BeautifulSoup(browser.page_source)
-    #sub = elem2.find_elements_by_xpath('img.n3VNCb')
     try:
         os.mkdir('downloads')
     except FileExistsError:
         pass
-    #print(sub)#Sva75c > div > div > div.pxAole > div.tvh9oe.BIB1wf > c-wiz > div.OUZ5W > div.zjoqD > div > div.v4dQwb > a > img   n3VNCb '.n3VNCb'
-    #print (len(sub))
-    ##src = sub[0].get_attribute('src')
     src = image_url
-    #data = src.split(',', 1)
-    #print(data[1])
-    #f = open("myfile.txt", "x")
-    #f.write(data[1])
-    #ext = re.search('/(.+?);', data[0]).group(1)
-    #base64_string = src
-    #decoded_string = base64.b64decode(data[1])
     try:
         if src != None:
             src  = str(src)
