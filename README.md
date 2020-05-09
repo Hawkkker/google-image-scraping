@@ -1,8 +1,10 @@
 # google-image-scraping
-Simple program to scrap first google image of query
+Simple program to scrap first google image of query and download it
 
 ## Usage
 
-```image_downloader.py [-h] [-l] keywords
+```bash
+image_downloader.py [-h] [-l] keywords
 -h: Help
--l: Output link instead of path to image and don't download it```
+-l: Output link instead of path to image and don't download it
+```
