@@ -41,7 +41,7 @@ def main(args):
             src  = str(src)
             if link == 0:
                 opener = urllib.request.build_opener()
-                opener.addheaders = [('User-agent', 'Mozilla/5.0')]
+                opener.addheaders = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686) Gecko/20071127 Firefox/2.0.0.11')]
                 urllib.request.install_opener(opener)
                 urllib.request.urlretrieve(src, os.path.join('downloads', args.keywords + '.jpg'))
                 out = os.path.join('./downloads/', args.keywords + '.jpg')
